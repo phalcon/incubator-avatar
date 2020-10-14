@@ -186,7 +186,7 @@ class Gravatar implements Avatarable
      * - boolean false for the gravatar default
      *
      * @param mixed $image The default image to use
-     * @return Gravatar
+     * @return $this
      *
      * @throws InvalidArgumentException
      */
@@ -231,7 +231,7 @@ class Gravatar implements Avatarable
      * By default, images from Gravatar.com will be returned as 80x80px
      *
      * @param int $size The avatar size to use
-     * @return Gravatar
+     * @return $this
      *
      * @throws InvalidArgumentException
      */
@@ -306,7 +306,7 @@ class Gravatar implements Avatarable
      *
      * The string representing the current maximum allowed rating ('g', 'pg', 'r', 'x').
      *
-     * @return int
+     * @return string
      */
     public function getRating()
     {

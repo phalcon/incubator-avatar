@@ -61,7 +61,7 @@ interface Avatarable
     /**
      * Gets the avatar URL based on the provided email identity.
      *
-     * @param mixed $identity The identity to get the gravatar for.
+     * @param string $identity The identity to get the gravatar for.
      * @return string
      */
     public function getAvatar($identity);
