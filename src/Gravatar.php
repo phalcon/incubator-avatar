@@ -244,7 +244,7 @@ class Gravatar implements Avatarable
             ]
         ];
 
-        if (false === filter_var($size, FILTER_VALIDATE_INT, $options)) {
+        if (false == filter_var($size, FILTER_VALIDATE_INT, $options)) {
             throw new InvalidArgumentException(
                 sprintf(
                     "Can't set Gravatar size. Size must be an integer within %s and %s pixels",
