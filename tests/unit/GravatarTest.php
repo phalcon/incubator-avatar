@@ -1,6 +1,6 @@
 <?php
 
-namespace Phalcon\Test\Avatar;
+namespace Phalcon\Incubator\Avatar\Tests;
 
 use Phalcon\Incubator\Avatar\Gravatar;
 use Phalcon\Config;
