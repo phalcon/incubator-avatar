@@ -3,7 +3,7 @@
 namespace Phalcon\Incubator\Avatar\Tests;
 
 use Phalcon\Incubator\Avatar\Gravatar;
-use Phalcon\Config;
+use Phalcon\Config\Config;
 
 /**
  * \Phalcon\Test\Avatar\GravatarTest

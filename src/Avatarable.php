@@ -34,14 +34,14 @@ interface Avatarable
      * @param mixed $image The default image to use
      * @return $this
      */
-    public function setDefaultImage($image);
+    public function setDefaultImage(mixed $image) : Avatarable;
 
     /**
      * Gets the current default image.
      *
      * @return mixed
      */
-    public function getDefaultImage();
+    public function getDefaultImage() : mixed;
 
     /**
      * Sets the avatar size to use.
@@ -49,14 +49,14 @@ interface Avatarable
      * @param int $size The avatar size to use.
      * @return $this
      */
-    public function setSize($size);
+    public function setSize(int $size) : Avatarable;
 
     /**
      * Gets the currently set avatar size.
      *
      * @return int
      */
-    public function getSize();
+    public function getSize() : int;
 
     /**
      * Gets the avatar URL based on the provided email identity.
@@ -64,5 +64,5 @@ interface Avatarable
      * @param string $identity The identity to get the gravatar for.
      * @return string
      */
-    public function getAvatar($identity);
+    public function getAvatar(string $identity) : string;
 }
