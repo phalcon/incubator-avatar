@@ -190,7 +190,7 @@ class Gravatar implements Avatarable
      *
      * @throws InvalidArgumentException
      */
-    public function setDefaultImage(mixed $image) : Gravatar
+    public function setDefaultImage(mixed $image): Gravatar
     {
         if (false === $image) {
             $this->defaultImage = false;
@@ -201,7 +201,7 @@ class Gravatar implements Avatarable
         $default = strtolower(trim($image));
 
         if (!isset($this->validDefaults[$default])) {
-            if (!filter_var($image, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED)) {
+            if (!filter_var($image, FILTER_VALIDATE_URL)) {
                 throw new InvalidArgumentException(
                     'The default image specified is not a recognized gravatar "default" and is not a valid URL'
                 );
@@ -220,7 +220,7 @@ class Gravatar implements Avatarable
      *
      * @return mixed
      */
-    public function getDefaultImage() : mixed
+    public function getDefaultImage()
     {
         return $this->defaultImage;
     }
@@ -235,7 +235,7 @@ class Gravatar implements Avatarable
      *
      * @throws InvalidArgumentException
      */
-    public function setSize(int $size) : Gravatar
+    public function setSize(int $size): Gravatar
     {
         $options = [
             'options' => [
@@ -254,7 +254,7 @@ class Gravatar implements Avatarable
             );
         }
 
-        $this->size = (int) $size;
+        $this->size = $size;
 
         return $this;
     }
@@ -264,7 +264,7 @@ class Gravatar implements Avatarable
      *
      * @return int
      */
-    public function getSize() : int
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -277,7 +277,7 @@ class Gravatar implements Avatarable
      *
      * @throws InvalidArgumentException
      */
-    public function setRating(string $rating) : Gravatar
+    public function setRating(string $rating): Gravatar
     {
         $rating = strtolower(trim($rating));
 
@@ -308,7 +308,7 @@ class Gravatar implements Avatarable
      *
      * @return string
      */
-    public function getRating() : string
+    public function getRating(): string
     {
         return $this->rating;
     }
@@ -318,7 +318,7 @@ class Gravatar implements Avatarable
      *
      * @return bool
      */
-    public function isUseSecureURL() : bool
+    public function isUseSecureURL(): bool
     {
         return $this->secureURL;
     }
@@ -328,7 +328,7 @@ class Gravatar implements Avatarable
      *
      * @return Gravatar
      */
-    public function enableSecureURL() : Gravatar
+    public function enableSecureURL(): Gravatar
     {
         $this->secureURL = true;
 
@@ -340,7 +340,7 @@ class Gravatar implements Avatarable
      *
      * @return Gravatar
      */
-    public function disableSecureURL() : Gravatar
+    public function disableSecureURL(): Gravatar
     {
         $this->secureURL = false;
 
@@ -353,7 +353,7 @@ class Gravatar implements Avatarable
      * @param string $email The email to get the hash for
      * @return string
      */
-    public function getEmailHash(string $email) : string
+    public function getEmailHash(string $email): string
     {
         return md5(strtolower(trim($email)));
     }
@@ -363,7 +363,7 @@ class Gravatar implements Avatarable
      *
      * @return Gravatar
      */
-    public function enableForceDefault() : Gravatar
+    public function enableForceDefault(): Gravatar
     {
         $this->forceDefault = true;
 
@@ -375,7 +375,7 @@ class Gravatar implements Avatarable
      *
      * @return Gravatar
      */
-    public function disableForceDefault() : Gravatar
+    public function disableForceDefault(): Gravatar
     {
         $this->forceDefault = false;
 
@@ -387,7 +387,7 @@ class Gravatar implements Avatarable
      *
      * @return bool
      */
-    public function isUseForceDefault() : bool
+    public function isUseForceDefault(): bool
     {
         return $this->forceDefault;
     }
@@ -398,7 +398,7 @@ class Gravatar implements Avatarable
      * @param string $identity The email to get the gravatar for
      * @return string
      */
-    public function getAvatar(string $identity) : string
+    public function getAvatar(string $identity): string
     {
         return $this->buildURL($identity);
     }
@@ -409,7 +409,7 @@ class Gravatar implements Avatarable
      * @param string $email The email to get the gravatar for
      * @return string
      */
-    protected function buildURL(string $email) : string
+    protected function buildURL(string $email): string
     {
         $url = static::HTTP_URL;
 

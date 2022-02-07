@@ -26,8 +26,8 @@
         "forum": "https://forum.phalcon.io"
     },
     "require": {
-        "php": ">=8.0",
-        "ext-phalcon": "5.0.0beta2",
+        "php": ">=7.4",
+        "ext-phalcon": "^5.0.0beta",
         "ext-json": "*"
     },
     "require-dev": {
@@ -64,5 +64,10 @@
             "phpunit.xml.dist",
             "psalm.xml.dist"
         ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
