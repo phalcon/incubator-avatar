@@ -190,7 +190,7 @@ class Gravatar implements Avatarable
      *
      * @throws InvalidArgumentException
      */
-    public function setDefaultImage(mixed $image): Gravatar
+    public function setDefaultImage($image): Gravatar
     {
         if (false === $image) {
             $this->defaultImage = false;
